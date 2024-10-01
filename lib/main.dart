@@ -29,7 +29,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   String _displayText = 'Hi';
-  Color _textColor = Colors.black;
 
   @override
   Widget build(BuildContext context) {
@@ -40,9 +39,10 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Text(
               _displayText,
-              style: TextStyle(fontSize: 24, color: _textColor),
+              style: const TextStyle(fontSize: 24),
             ),
             const SizedBox(height: 20),
+            // Button widget
             ElevatedButton(
               onPressed: () {
                 setState(() {
@@ -50,15 +50,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 });
               },
               child: const Text('Press Me :)'),
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  _textColor = _textColor == Colors.black ? Colors.red : Colors.black;
-                });
-              },
-              child: const Text('Change Text Color'),
             ),
           ],
         ),
